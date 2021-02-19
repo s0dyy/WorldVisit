@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface WSInterface {
 
-    @GET("all")
-    fun getCountries(): Call<RetourWSCountries>
+    @GET("rest/v2/all")
+    fun getCountries(): Call<List<RetourWSCountry>>
 }

@@ -5,20 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.worldvisist.R
-import com.example.worldvisist.webservice.RetourWSCountries
+import com.example.worldvisist.webservice.RetourWSCountry
 import com.example.worldvisist.webservice.RetrofitSingleton
-import com.example.worldvisist.webservice.WSInterface
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import kotlin.random.Random
 
 class WorldCountryActivity : AppCompatActivity() {
 
+    private var listFront: ArrayList<RetourWSCountry> = ArrayList()
+
     lateinit var buttonSelectionner : Button
-    // Retrofit :
-    private val serviceRetrofit = RetrofitSingleton.retrofit.create(WSInterface::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,29 +44,20 @@ class WorldCountryActivity : AppCompatActivity() {
     fun loadCountries() {
 
         // appel au webservice :
-        val call = serviceRetrofit.getCountries()
-        call.enqueue(object : Callback<RetourWSCountries>
-        {
-            override fun onResponse(call: Call<RetourWSCountries>, response: Response<RetourWSCountries>)
-            {
-                if (response.isSuccessful)
-                {
-                    val retourWSCountries = response.body()
-                    retourWSCountries?.results?.let { liste ->
+        val recycler = findViewById<RecyclerView>(R.id.allCountry)
+        recycler.setHasFixedSize(true)
 
-                        // récupération d'un pays au hasard :
-                        val pays = liste[Random.nextInt(0, liste.size)]
+        val layoutManager = LinearLayoutManager(this)
+        recycler.layoutManager = layoutManager
 
-                        Log.d("tag", pays.toString())
-                    }
-                }
+        RetrofitSingleton.getClient.getCountries().enqueue(object : Callback<List<RetourWSCountry>> {
+            override fun onResponse(call: Call<List<RetourWSCountry>>?, response: Response<List<RetourWSCountry>>?) {
+                listFront.addAll(response!!.body()!!)
             }
 
-            override fun onFailure(call: Call<RetourWSCountries>, t: Throwable)
-            {
+            override fun onFailure(call: Call<List<RetourWSCountry>>?, t: Throwable) {
                 Log.d("error", t.message.toString())
             }
-
         })
 
 
