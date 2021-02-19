@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
-    //Declaration de mon bouton
+
     lateinit var boutonAjouter : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
