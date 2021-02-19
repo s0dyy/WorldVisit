@@ -1,4 +1,4 @@
-package com.example.worldvisist
+package com.example.worldvisist.webservice
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

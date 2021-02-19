@@ -1,9 +1,10 @@
-package com.example.worldvisist
+package com.example.worldvisist.activites
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.worldvisist.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,7 +18,8 @@ class MainActivity : AppCompatActivity() {
         boutonAjouter = findViewById(R.id.buttonAjouter)
 
         // creation de notre intent
-        val monIntent : Intent =  Intent(this,WorldCountryActivity::class.java)
+        val monIntent : Intent =  Intent(this,
+            WorldCountryActivity::class.java)
 
         //clic sur le bouton
         boutonAjouter.setOnClickListener {

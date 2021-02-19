@@ -1,10 +1,14 @@
-package com.example.worldvisist
+package com.example.worldvisist.activites
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import com.example.worldvisist.R
+import com.example.worldvisist.webservice.RetourWSCountries
+import com.example.worldvisist.webservice.RetrofitSingleton
+import com.example.worldvisist.webservice.WSInterface
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,7 +31,8 @@ class WorldCountryActivity : AppCompatActivity() {
 
 
         // creation de notre intent
-        val monIntentRetour : Intent =  Intent(this,InsertCountryActivity::class.java)
+        val monIntentRetour : Intent =  Intent(this,
+            InsertCountryActivity::class.java)
 
         //clic sur le bouton
         buttonSelectionner.setOnClickListener {

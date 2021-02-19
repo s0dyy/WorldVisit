@@ -1,4 +1,4 @@
-package com.example.worldvisist
+package com.example.worldvisist.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

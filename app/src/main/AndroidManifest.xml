@@ -11,9 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WorldVisist">
-        <activity android:name=".InsertCountryActivity"></activity>
-        <activity android:name=".WorldCountryActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".activites.InsertCountryActivity"></activity>
+        <activity android:name=".activites.WorldCountryActivity" />
+        <activity android:name=".activites.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

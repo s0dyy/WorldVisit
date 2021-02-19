@@ -1,4 +1,4 @@
-package com.example.worldvisist
+package com.example.worldvisist.webservice
 
 import androidx.room.ColumnInfo
 

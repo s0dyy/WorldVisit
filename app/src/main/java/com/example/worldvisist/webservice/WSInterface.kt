@@ -1,4 +1,4 @@
-package com.example.worldvisist
+package com.example.worldvisist.webservice
 
 import retrofit2.Call
 import retrofit2.http.GET

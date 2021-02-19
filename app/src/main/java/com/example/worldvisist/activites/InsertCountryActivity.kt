@@ -1,9 +1,10 @@
-package com.example.worldvisist
+package com.example.worldvisist.activites
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.worldvisist.R
 
 class InsertCountryActivity : AppCompatActivity() {
 
@@ -19,7 +20,8 @@ class InsertCountryActivity : AppCompatActivity() {
 
 
         // creation de notre intent
-        val monIntentRetour : Intent =  Intent(this,MainActivity::class.java)
+        val monIntentRetour : Intent =  Intent(this,
+            MainActivity::class.java)
 
         //clic sur le bouton
         buttonInserer.setOnClickListener {
