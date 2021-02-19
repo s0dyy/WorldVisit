@@ -5,24 +5,24 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class WorldCountryActivity : AppCompatActivity() {
+class InsertCountryActivity : AppCompatActivity() {
 
     //Declaration de mon bouton
-    lateinit var buttonSelectionner : Button
+    lateinit var buttonInserer : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_world_country)
+        setContentView(R.layout.activity_insert_country)
 
         //initialisation
-        buttonSelectionner = findViewById(R.id.buttonSelectionner)
+        buttonInserer = findViewById(R.id.buttonInserer)
 
 
         // creation de notre intent
-        val monIntentRetour : Intent =  Intent(this,InsertCountryActivity::class.java)
+        val monIntentRetour : Intent =  Intent(this,MainActivity::class.java)
 
         //clic sur le bouton
-        buttonSelectionner.setOnClickListener {
+        buttonInserer.setOnClickListener {
             startActivity(monIntentRetour)
         }
     }
