@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import com.google.android.material.textfield.TextInputLayout
 
 @Entity
-data class CountrieEntity(
+data class Countrie(
         @PrimaryKey val uid: Int,
         @ColumnInfo(name = "name") val name: String?,
         @ColumnInfo(name = "flag") val flag: String?,
